@@ -1,0 +1,54 @@
+<div class="body">
+    <div class="container">
+        <div class="float-left">
+          <div class="card">
+              <img [src]="cardPlayer1.Poster" alt="Avatar" style="width:100%">
+              <div class="container">
+                <h4><b>{{cardPlayer1.Title}}</b></h4>
+                <p>{{cardPlayer1.imdbRating}}</p>
+                <p>{{cardPlayer1.imdbVotes}}</p>
+              </div>
+            </div>
+        </div>
+      <div class="float-right">
+          <div class="card">
+              <img [src]="cardPlayer2.Poster" alt="Avatar" style="width:100%">
+              <div class="container">
+                <h4><b>{{cardPlayer2.Title}}</b></h4>
+                <p>{{cardPlayer2.imdbRating}}</p>
+                <p>{{cardPlayer2.imdbVotes}}</p>
+              </div>
+            </div>
+      </div>
+      <div class="float-center">
+        <p>Digite um titulo:</p>
+        <div class="wrapper-center">
+            <input type="text"
+            [(ngModel)]="tituloEscolhido">
+            {{ ' ' }}
+            <button (click)='getCard()'>Escolher</button>
+        </div>
+      </div>
+    </div>
+    <div class="HUD">
+        <div class="player1HUD">
+          <img src="https://www.zenia.com/wp-content/uploads/2016/01/mark-before-and-after-accident-1772229168-300x289.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>{{players[0].nome}}</b></h4>
+            <p>{{players[0].pontuacao}}</p>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          Vez:
+          <br>
+          <b style="font-size: 20px;">{{ playerAtual }}</b>
+        </div>
+        <div class="player2HUD">
+            <img src="http://bturn.com/wp-content/uploads/2011/11/darth-vader-face.jpeg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>{{players[1].nome}}</b></h4>
+              <p>{{players[1].pontuacao}}</p>
+            </div>
+        </div>
+    </div>
+</div>
